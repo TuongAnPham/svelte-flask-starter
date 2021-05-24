@@ -10,5 +10,5 @@
 	<title>Chat Application Project</title>
 </svelte:head>
 
-<Home user='anything'></Home>
-<!-- <Chat></Chat> -->
+<!-- <Home user='anything'></Home> -->
+<Chat></Chat>

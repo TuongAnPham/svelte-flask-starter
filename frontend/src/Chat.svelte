@@ -1,22 +1,30 @@
 <script>
-        let cats = [
-		{ id: 'J---aiyznGQ', name: 'Keyboard Cat' },
-		{ id: 'z_AbfPXTKms', name: 'Maru' },
-		{ id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' }
+    import axios from 'axios'
+        let messages = [
+            'test'
 	];
+
+    function getdata() {
+        axios.get('http://127.0.0.1:8080/get').then(resp => {
+
+        console.log(resp.data);
+        messages=resp.data
+        });
+    }
+    setInterval(getdata, 1000);
 </script>
 
     <body>
         <header>The chatbox will be on the second page since I'll explain and keep track of my work on the first page</header>
         
         <ul>
-            {#each cats as { id, name }, i}
-                <li><a target="_blank" href="https://www.youtube.com/watch?v={id}">
-                    {i + 1}: {name}
-                </a></li>
+            {#each messages as m, i}
+                <li>
+                    {m}
+                </li>
             {/each}
         </ul>
-        
+
         <!-- {% for message in text%}
             <h1>{{message}}</h1>
         {% endfor %} -->
