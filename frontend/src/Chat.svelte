@@ -11,7 +11,13 @@
         messages=resp.data
         });
     }
-    setInterval(getdata, 1000);
+
+    function send() {
+        let input = document.getElementById("help")
+        console.log(input.value)
+    }
+
+    // setInterval(getdata, 1000);
 </script>
 
     <body>
@@ -29,10 +35,12 @@
             <h1>{{message}}</h1>
         {% endfor %} -->
 
-        <form action='http://127.0.0.1:8080/receive' method='GET'>
+        <form on:submit|preventDefault={send}>
+        <!-- <form action='http://127.0.0.1:8080/receive' method='GET'> -->
             <label for="help">How can I help you?</label>
             <input type="text" id="help" value="Enter your question here" name='whatever'>
-            <input type="submit" placeholder="send">
+            <button type="submit" placeholder="send">Submit</button>
+            <!-- <input type="submit" placeholder="send"> -->
         </form>
 
         <p>It was long and hard but finally the basic chat is here.</p>
