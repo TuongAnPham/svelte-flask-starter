@@ -26,7 +26,7 @@
 </script>
 
     <body>
-        <header>The chatbox will be on the second page since I'll explain and keep track of my work on the first page</header>
+        <header>The chatbox will be on the second page since I'll explain and keep track of my work on the first page.</header>
         
         <ul>
             {#each messages as m, i}

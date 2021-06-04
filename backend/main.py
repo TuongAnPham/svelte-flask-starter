@@ -6,11 +6,11 @@ CORS(app)
 data = []
 
 # Path for our main Svelte page
-@app.route("/")
+@app.route("/chat")
 def base():
     return send_from_directory('public', 'index.html')
 
-@app.route("/about")
+@app.route("/")
 def about():
     return render_template('home.html')
 
