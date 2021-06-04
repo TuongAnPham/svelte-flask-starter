@@ -1,7 +1,6 @@
 <script>
     import axios from 'axios'
         let messages = [
-            'test'
 	];
 
     function getdata() {
@@ -27,7 +26,7 @@
 
     <body>
         <header>The chatbox will be on the second page since I'll explain and keep track of my work on the first page.</header>
-        
+       <div> 
         <ul>
             {#each messages as m, i}
                 <li>
@@ -35,7 +34,7 @@
                 </li>
             {/each}
         </ul>
-
+        </div>
         <!-- {% for message in text%}
             <h1>{{message}}</h1>
         {% endfor %} -->
@@ -49,7 +48,7 @@
         </form>
 
         <nav>
-            <a href="/about">Back to the first page</a>
+            <a href="/">Back to the first page</a>
         </nav>
     </body>
 
@@ -59,11 +58,11 @@
         font-size: 1.5em;
 		font-weight: 100;
 	}
-    /* div {
-  background-color: lightgrey;
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
+    div {
+  background-color: rgb(255, 255, 255);
+  width: 700px;
+  border: 15px solid rgb(117, 0, 0);
+  padding: 20px;
   margin: 20px;
-    } */
+    }
 </style>
