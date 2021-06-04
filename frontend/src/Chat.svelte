@@ -14,10 +14,15 @@
 
     function send() {
         let input = document.getElementById("help")
-        console.log(input.value)
+        // input.value is the message text
+        // http://127.0.0.1:8080/receive use this endpoint in place of "URL"
+        axios.get('http://127.0.0.1:8080/receive', {params: {whatever: input.value} }).then(resp => {
+            console.log("Sending message...")
+            console.log(resp.data);
+        })
     }
 
-    // setInterval(getdata, 1000);
+    setInterval(getdata, 1000);
 </script>
 
     <body>
@@ -43,9 +48,22 @@
             <!-- <input type="submit" placeholder="send"> -->
         </form>
 
-        <p>It was long and hard but finally the basic chat is here.</p>
-
         <nav>
-            <a href="/">Back to the first page</a>
+            <a href="/about">Back to the first page</a>
         </nav>
     </body>
+
+<style>
+	header {
+		color: #ff3e00;
+        font-size: 1.5em;
+		font-weight: 100;
+	}
+    /* div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+    } */
+</style>
